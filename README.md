@@ -29,4 +29,3 @@ Relatório
   - [ ] Carteira de investimentos
   - [ ] Dicas personalizadas para ajudar a gastar menos em determinada categoria
   - [ ] Vídeo com temas de investimento
-    - [ ] da categoria de gasto que mais é utilizada   
