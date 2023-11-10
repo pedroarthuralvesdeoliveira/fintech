@@ -1,0 +1,60 @@
+CREATE TABLE T_USUARIO 
+( 
+ nm_usuario VARCHAR(50) NOT NULL,  
+ nr_telefone VARCHAR(15),  
+ ds_email VARCHAR(50),  
+ ds_idioma VARCHAR(20),  
+ ds_conta_padrao VARCHAR(15),  
+ ds_tema VARCHAR(6),  
+ st_arredondamento NUMERIC(1),  
+ st_separador_decimal NUMERIC(1),  
+ cd_usuario NUMERIC(6) PRIMARY KEY AUTO_INCREMENT,  
+ UNIQUE (ds_email)
+); 
+
+CREATE TABLE T_TRANSACAO 
+( 
+ cd_transacao NUMERIC(7) PRIMARY KEY AUTO_INCREMENT,  
+ cd_usuario NUMERIC(6),  
+ cd_conta NUMERIC(6),  
+ vl_montante NUMERIC(6,2) NOT NULL,  
+ dt_data DATE NOT NULL,  
+ ds_tipo_operacao VARCHAR(10) NOT NULL,  
+ CHECK (vl_montante > 0)
+); 
+
+CREATE TABLE T_CONTA 
+( 
+ cd_conta NUMERIC(6) PRIMARY KEY AUTO_INCREMENT,  
+ nr_agencia NUMERIC(6) NOT NULL,  
+ ds_tipo_conta VARCHAR(9) NOT NULL,  
+ nm_conta VARCHAR(15) NOT NULL,  
+); 
+
+CREATE TABLE T_USUARIO_VIDEO 
+( 
+ cd_usuario NUMERIC(6) PRIMARY KEY,  
+ cd_video NUMERIC(6) PRIMARY KEY,  
+ st_visto NUMERIC(1) NOT NULL DEFAULT '0',  
+ nr_avaliacao NUMERIC(1),  
+); 
+
+CREATE TABLE T_VIDEO 
+( 
+ cd_video NUMERIC(6) PRIMARY KEY AUTO_INCREMENT,  
+ nm_titulo VARCHAR(50) NOT NULL,  
+ vl_duracao DATE NOT NULL,  
+ ds_caminho_youtube VARCHAR(100),  
+); 
+
+CREATE TABLE T_CATEGORIA_VIDEO 
+( 
+ cd_video NUMERIC(6) PRIMARY KEY,  
+ ds_categoria VARCHAR(25) NOT NULL,  
+); 
+
+ALTER TABLE T_TRANSACAO ADD FOREIGN KEY(cd_usuario) REFERENCES T_USUARIO (cd_usuario)
+ALTER TABLE T_TRANSACAO ADD FOREIGN KEY(cd_conta) REFERENCES T_CONTA (cd_conta)
+ALTER TABLE T_USUARIO_VIDEO ADD FOREIGN KEY(cd_usuario) REFERENCES T_USUARIO (cd_usuario)
+ALTER TABLE T_USUARIO_VIDEO ADD FOREIGN KEY(cd_video) REFERENCES T_VIDEO (cd_video)
+ALTER TABLE T_CATEGORIA_VIDEO ADD FOREIGN KEY(cd_video) REFERENCES T_VIDEO (cd_video)

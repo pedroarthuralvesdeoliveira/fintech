@@ -1,7 +1,0 @@
-<?xml version = '1.0' encoding = 'UTF-8'?>
-<LogicalDesign class="oracle.dbtools.crest.model.design.logical.LogicalDesign" name="Logical" id="5B30F11E-A1A7-6DD7-A0D7-01DE424B3DA8" mainViewID="208526B7-0467-50F5-3333-3AC405A5A368">
-<createdBy>pedro.sistemas</createdBy>
-<createdTime>2023-11-09 19:24:49 UTC</createdTime>
-<ownerDesignName>fintech</ownerDesignName>
-<shouldBeOpen>false</shouldBeOpen>
-</LogicalDesign>
