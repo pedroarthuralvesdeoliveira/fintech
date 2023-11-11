@@ -29,3 +29,5 @@ Relatório
   - [ ] Carteira de investimentos
   - [ ] Dicas personalizadas para ajudar a gastar menos em determinada categoria
   - [ ] Vídeo com temas de investimento
+  - [ ] Geração de PDFs dos relatórios 
+  - [ ] Pagamentos recorrentes
