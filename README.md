@@ -21,7 +21,6 @@ Relatório
    - Por período
      - Ano 
      - Dia
-     - Mensal
      - Mês
      - Personalizado
 
